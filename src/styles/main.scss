@@ -146,8 +146,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    margin-top: -370px;
-    margin-bottom: -370px;
+    margin-top: -300px;
+    margin-bottom: -300px;
 
     // Altera o layout para exibição em bloco em telas menores
     @media (max-width: 767px) {
