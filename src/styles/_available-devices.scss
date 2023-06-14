@@ -1,33 +1,52 @@
+// Estilização para a seção de dispositivos disponíveis
 .available-devices {
+    // Aplica um padding em todos os lados
     padding: 5.6vw;
 
+    // Estilização para o título h2
     h2 {
+        // Alinha o texto ao centro
         text-align: center;
+        // Aplica uma margem na parte inferior
         margin-bottom: 24px;
     }
 
+    // Estilização para a lista de dispositivos
     &__list {
+        // Define o layout como grid
         display: grid;
+        // Define o espaço entre os elementos do grid
         gap: 24px;
+        // Define o template das colunas do grid para 4 colunas de tamanho igual
         grid-template-columns: repeat(4, 1fr);
 
+        // Estilização específica para telas menores (max-width: 768px)
         @media (max-width: 768px) {
+            // Define o template das colunas do grid para 2 colunas de tamanho igual
             grid-template-columns: 1fr 1fr;
         }
 
+        // Estilização para cada item da lista
         &__item {
+            // Alinha o texto ao centro
             text-align: center;
 
+            // Estilização para o título h4
             h4 {
+                // Aplica uma margem no topo e na parte inferior
                 margin-top: 20px;
                 margin-bottom: 24px;
             }
 
+            // Estilização para cada item da lista
             li {
+                // Remove os marcadores da lista
                 list-style-type: none;
             }
 
+            // Estilização para as imagens
             img {
+                // Define a largura máxima como 100% para se ajustar ao container
                 max-width: 100%;
             }
         }

@@ -1,12 +1,13 @@
+// Importa arquivos SASS separados, que podem conter variáveis, mixins, ou estilos para diferentes partes do site
 @use 'variaveis';
 @use 'hero';
 @use 'shows';
-@use 'plans';
-@use 'available-devices'; 
+@use 'available-devices';
 @use 'faq';
 @use 'footer';
 @use 'header';
 
+// Importa as fontes Avenir Regular e Bold
 @font-face {
     font-family: Avenir;
     src: url(../../assets/fonts/Avenir-Regular.woff2);
@@ -19,6 +20,7 @@
     font-weight: 700;
 }
 
+// Define algumas propriedades padrão para todos os elementos
 * {
     margin: 0;
     padding: 0;
@@ -27,23 +29,27 @@
     list-style: none;
 }
 
+// Define a cor de fundo para o body
 body {
     background-color: variaveis.$corDeFundo;
 }
 
+// Mixin para estilos de texto padrão
 @mixin text($fontSize: 16px) {
     font-size: $fontSize;
     line-height: $fontSize + 10px;
     color: variaveis.$corTextoPrincipal;
 }
 
+// Mixin para estilos de título padrão
 @mixin title($fontSize: 40px) {
     @include text($fontSize);
     color: variaveis.$corTextoSecundario;
 }
 
+// Varias classes para diferentes tamanhos e estilos de texto
 .text--big {
-    @include text(18px);
+    @include text(25px);
 
     @media (max-width: 768px) {
         @include text(15px);
@@ -58,18 +64,10 @@ body {
     }
 }
 
-.text--small {
-    @include text(12px);
-
-    @media (max-width: 768px) {
-        @include text(11px);
-    }
-}
-
 .link-text {
     @include text(18px);
     color: variaveis.$corTextoSecundario;
-    text-decoration: underline
+    text-decoration: underline;
 }
 
 .title--big {
@@ -94,8 +92,9 @@ body {
     @media (max-width: 768px) {
         @include title(22px);
     }
-} 
+}
 
+// Estilos para os botões, incluindo variações para botões secundários e escuros
 .button {
     display: flex;
     align-items: center;
@@ -110,25 +109,30 @@ body {
     text-decoration: none;
     padding: 8px 14px;
     letter-spacing: 1px;
-    border: 1px solid  variaveis.$corDeFundoBotaoPrimario;
+    border: 1px solid variaveis.$corDeFundoBotaoPrimario;
 
+    // Mudar a cor de fundo no hover
     &:hover {
         background-color: lighten(variaveis.$corDeFundoBotaoPrimario, 3%);
     }
 
+    // Estilo para botão secundário
     &--secondary {
         background-color: variaveis.$corDeFundoBotaoSecundario;
         border-color: variaveis.$corDeFundoBotaoSecundario;
 
+        // Mudar a cor de fundo no hover para botão secundário
         &:hover {
             background-color: lighten(variaveis.$corDeFundoBotaoSecundario, 3%);
         }
     }
 
+    // Estilo para botão dark
     &--dark {
         background-color: rgba(variaveis.$corDeFundoBotaoDark, 0.8);
         border-color: variaveis.$corTextoSecundario;
 
+        // Mudar a cor de fundo e cor do texto no hover para botão dark
         &:hover {
             background-color: variaveis.$corTextoSecundario;
             color: variaveis.$corDeFundo;
@@ -136,36 +140,65 @@ body {
     }
 }
 
+// Estilo para seções com imagem e texto
 .image-text-section {
-    padding: 5.6vw;
+    padding: 14vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    margin-top: -370px;
+    margin-bottom: -370px;
 
-    @media (max-width: 768px) {
+    // Altera o layout para exibição em bloco em telas menores
+    @media (max-width: 767px) {
         display: block;
+        margin-top: -40px;
+        margin-bottom: -40px;
     }
 
+    @media (min-width: 768px) and (max-width: 1023px) {
+        display: block;
+        margin-top: -120px;
+        margin-bottom: -120px;
+        margin-left: 50px;
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1365px), screen and (min-width: 1366px) and (orientation: portrait) {
+        padding: 25vw;
+        display: block;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        margin-top: -284px;
+        margin-bottom: -284px;
+        margin-left: 100px;
+        // Seus estilos vão aqui
+    }
+
+    // Estilo para imagem dentro da seção
     img {
         max-width: 100%;
     }
 
+    // Estilo para container de texto dentro da seção
     &__text_container {
         padding: 0 2vw;
 
+        // Espaçamento abaixo do título dentro do container de texto
         h2 {
             margin-bottom: 24px;
         }
     }
 
+    // Estilo para seções com imagem de largura total
     &--image-full-width {
         display: block;
         position: relative;
 
+        // Faz a imagem ocupar toda a largura
         img {
             width: 100%;
         }
 
+        // Estilo para o container de texto quando a imagem tem largura total
         &__text_container {
             position: absolute;
             top: 0;
@@ -176,6 +209,7 @@ body {
             flex-direction: column;
             justify-content: center;
 
+            // Ajusta o posicionamento do container de texto em telas menores
             @media (max-width: 768px) {
                 position: relative;
                 left: 0;

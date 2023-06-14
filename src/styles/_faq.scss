@@ -1,53 +1,98 @@
+// Estilização para a seção de perguntas frequentes (FAQ)
 .faq {
+    // Aplica um padding em todos os lados
     padding: 5.6vw;
 
+    // Estilização para o título h2
     h2 {
+        // Alinha o texto ao centro
         text-align: center;
+        // Aplica uma margem na parte inferior
         margin-bottom: 24px;
     }
 
+    // Estilização para o grupo de perguntas
     &__questions {
+
+        // Estilização para cada item de pergunta
         &__item {
+            // Define a cor de fundo
             background-color: #13151d;
+            // Aplica uma margem na parte inferior
             margin-bottom: 16px;
 
+            // Estilização para a pergunta em si
             &__question {
+                // Define a cor do texto
                 color: #fff;
-                font-size: 20px;
+                // Define o tamanho da fonte
+                font-size: 30px;
+                // Aplica um padding
                 padding: 24px;
+                // Define o item como bloco
                 display: block;
+                // Define o cursor como pointer para indicar interação
                 cursor: pointer;
+                // Define a posição como relativa para o pseudoelemento
                 position: relative;
 
+                // Pseudoelemento para o sinal de adição
                 &::after {
+                    // Define o conteúdo como '+'
                     content: '+';
+                    // Posiciona o pseudoelemento
                     position: absolute;
                     top: 0;
                     right: 24px;
+                    // Define a altura
                     height: 100%;
+                    // Disposição em linha
                     display: flex;
+                    // Alinha os itens ao centro
                     align-items: center;
+                    // Define o tamanho da fonte
                     font-size: 40px;
                 }
             }
 
+            // Estilização para a resposta
             &__answer {
+                // Inicialmente define a altura como 0 para esconder
                 height: 0;
+                // Esconde o conteúdo que excede o container
                 overflow: hidden;
-                padding: 0 24px;
+                // Aplica um padding
+                padding: 0 34px;
+                // Define a transição para a altura
                 transition: height, .5s ease;
             }
 
+            // Estilização quando o item de pergunta está aberto
             &--is-open {
+
+                // Altera o conteúdo do pseudoelemento para '-'
                 .faq__questions__item__question::after {
                     content: '-';
                 }
-                
+
+                // Altera a altura e o padding da resposta para exibir
                 .faq__questions__item__answer {
                     height: auto;
                     padding-bottom: 24px;
                     transition: height, .5s ease;
+                    padding: 0 60px;
+                    padding-bottom: 24px;
                 }
+
+                li::marker {
+                    content: '. ';
+                    font-size: 3em;
+                }
+
+                p::first-letter {
+                    margin-left: -25px;
+                }
+
             }
         }
     }

@@ -1,17 +1,28 @@
 @use 'variaveis';
 
+// Estilização para o cabeçalho do site
 .header {
+    // Fixa a posição do cabeçalho na parte superior da página
     position: sticky;
     top: 0;
     left: 0;
+
+    // Configura a cor de fundo
     background-color: variaveis.$corDeFundo;
+
+    // Animação suave para mudanças na cor de fundo
     transition: background-color .5s ease;
+
+    // Define o z-index para garantir que o cabeçalho fique acima de outros elementos
     z-index: 1;
 
+    // Estilização quando o cabeçalho está escondido
     &--is-hidden {
+        // Remove a cor de fundo
         background-color: transparent;
 
         .header {
+            // Faz o logo e o primeiro item do link ficarem invisíveis
             &__logo, &__links__item:first-child {
                 opacity: 0;
                 visibility: hidden;
@@ -19,43 +30,73 @@
         }
     }
 
+    // Configuração do container do cabeçalho
     &__container {
+        // Aplica um padding nas laterais
         padding: 8px 36px;
+
+        // Disposição em linha com espaçamento igual entre os itens
         display: flex;
         justify-content: space-between;
 
+        // Estilização específica para dispositivos com tela de até 768px de largura
         @media (max-width: 768px) {
+            // Reduz o padding nas laterais para dispositivos móveis
             padding: 0 12px 0 20px;
         }
     }
 
+    // Estilização do logo
     &__logo {
+        // Limita a largura máxima do logo
         max-width: 80px;
+        // Define a largura como 100%
         width: 100%;
+        // Aplica margem
         margin: 5px;
+
+        // Animação suave para mudanças na opacidade
         transition: opacity .5s ease;
 
+        // Estilização específica para dispositivos com tela de até 768px de largura
         @media (max-width: 768px) {
+            // Reduz a largura máxima do logo para dispositivos móveis
             max-width: 64px;
         }
     }
 
+    // Configuração dos links do cabeçalho
     &__links {
+        // Disposição em linha
         display: flex;
 
+        // Configuração para cada item de link
         &__item {
+            // Aplica margem
             margin: 5px;
+
+            // Animação suave para mudanças na opacidade
             transition: opacity .5s ease;
         }
     }
 
+    // Estilização dos botões
     .button {
+        // Define a altura do botão
         height: 50px;
 
+        // Estilização específica para dispositivos com tela de até 768px de largura
         @media (max-width: 768px) {
+            // Reduz o tamanho da fonte para dispositivos móveis
             font-size: 13px;
+
+            // Reduz o padding
             padding: 8px 11px;
+
+            // Reduz a altura do botão
             height: 40px;
+
+            // Remove o espaçamento entre as letras
             letter-spacing: 0;
         }
     }

@@ -1,36 +1,60 @@
 @use 'variaveis';
 
+// Estilização para o rodapé do site
 .footer {
+    // Aplica um padding na parte superior e inferior
     padding: 26px 8px;
 
+    // Configuração do container do rodapé
     &__container {
+        // Limita a largura máxima
         max-width: 1024px;
+        // Define a largura como 100%
         width: 100%;
+        // Centraliza o conteúdo
         margin: 0 auto;
+        // Alinha o texto ao centro
         text-align: center;
+        // Aplica um padding na parte inferior
         padding-bottom: 20px;
+        color: variaveis.$corTextoPrincipal;
     }
 
+    // Estilização do logo do rodapé
     &__logo {
+        // Define a largura
         width: 80px;
+        // Aplica margem na parte inferior e centraliza o logo
         margin: 0 auto 10px;
     }
 
+    // Configuração dos links do rodapé
     &__links {
+        // Aplica margem na parte inferior
         margin-bottom: 16px;
+        // Disposição em linha
         display: flex;
+        // Alinha os itens ao centro
         align-items: center;
+        // Permite que os itens sejam envolvidos para a próxima linha
         flex-wrap: wrap;
+        // Centraliza os itens
         justify-content: center;
-        
+        // Configuração para cada item de link
         &__item {
+            // Define o item como inline-block
             display: inline-block;
-
+            color: variaveis.$corTextoPrincipal;
+            // Estilização para os links
             a {
+                // Remove a decoração dos links
                 text-decoration: none;
+                // Aplica padding
                 padding: 8px 16px;
+                // Define o link como bloco
                 display: block;
-
+                color: variaveis.$corTextoPrincipal;
+                // Altera a cor do texto ao passar o mouse
                 &:hover {
                     color: variaveis.$corTextoSecundario;
                 }
@@ -38,31 +62,46 @@
         }
     }
 
+    // Estilização para os parágrafos no rodapé
     p {
+        // Aplica margem na parte inferior
         margin-bottom: 16px;
     }
 }
 
+// Estilização para o seletor de idiomas
 .language-selector {
+    // Disposição em linha
     display: flex;
+    // Alinha os itens ao centro
     align-items: center;
 
+    // Estilização para as imagens
     img {
+        // Define altura e largura
         height: 18px;
         width: 18px;
     }
 
+    // Estilização para o seletor de opções
     select {
+        // Define a cor de fundo como transparente
         background-color: transparent;
+        // Remove a borda
         border: none;
+        // Define a cor do texto
         color: variaveis.$corTextoPrincipal;
+        // Define a altura
         height: 38px;
 
+        // Altera a cor do texto ao passar o mouse
         &:hover {
             color: variaveis.$corTextoSecundario;
         }
 
+        // Estilização para as opções do seletor
         option {
+            // Define a cor do texto
             color: variaveis.$corDeFundo;
         }
     }

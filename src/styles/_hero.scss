@@ -1,66 +1,106 @@
+// Importa as variáveis definidas em '_variaveis.scss'
 @use 'variaveis';
 
+// Estilização da seção hero do site
 .hero {
-    padding: 5.6vw;
-    min-height: 80vh;
-    background-image: url(../images/hero_desktop.jpeg);
-    text-align: center;
-    background-size: cover;
 
-    @media (max-width: 768px) {
-        background-image: url(../images/hero_celular.jpeg);
-        padding-top: calc(50vw + 25px);
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin-top: -55px;
-    }
-
+    // Estilização do botão na seção hero
     .button {
+        // Adiciona margem no topo e no fundo do botão
         margin-top: 2vw;
         margin-bottom: 8px;
     }
 
+    // Estilização do conteúdo da seção hero
     &__content {
-        max-width: 640px;
+        // Define a largura máxima do conteúdo
 
-        &__branding {
-            max-width: 320px;
-            margin: 0 auto 38px;
+        max-width: 640px;
+        margin: 0 auto;
+
+        // Estilização da área de branding
+        &__branding img {
+            // Define a largura máxima da área de branding e centraliza na tela
+
+            margin-left: -40%;
 
             @media (max-width: 768px) {
-                max-width: 180px;
+                // Ajusta a largura para 100% (ocupar toda a linha) para dispositivos móveis
+                width: 100%;
+                margin-left: -5%;
+                // Adiciona margem na parte inferior de cada combo
+                margin-bottom: 24px;
+                padding: 5px;
+                margin-bottom: -30px;
+            }
+            @media (min-width: 769px) and (max-width: 1024px) {
+                // Define o template das colunas do grid para 3 colunas de tamanho igual
+                width: 100%;
+                margin-left: -5%;
+                // Adiciona margem na parte inferior de cada combo
+                margin-bottom: 24px;
+                padding: 5px;
+                margin-bottom: -30px;
+            }
+
+            // Estilização específica para dispositivos com tela de até 768px de largura
+
+        }
+
+        // Estilização do título pequeno
+        .title--small {
+            // Adiciona margem na parte inferior do título
+            margin: 27px 183px 38px;
+            @media (max-width: 768px) {
+                // Ajusta a largura para 100% (ocupar toda a linha) para dispositivos móveis
+                margin: 27px 70px 38px;
             }
         }
 
-        .title--small {
-            margin-bottom: 64px;
-        }
-
+        // Estilização dos parágrafos
         p {
+            // Adiciona margem na parte inferior dos parágrafos
             margin-bottom: 20px;
 
+            // Estilização específica para o último parágrafo
             &:last-child {
+                // Adiciona margem no topo do último parágrafo
                 margin-top: 60px;
             }
         }
 
+        // Estilização da área de combos
         &__combos {
+            // Define o layout da área de combos como flexível e alinha os itens com espaçamento igual entre eles
             display: flex;
             justify-content: space-between;
+            margin-top: -33px;
 
+            // Estilização específica para dispositivos com tela de até 768px de largura
             @media (max-width: 768px) {
-                display: block;
+                // Altera o layout da área de combos para bloco (verticalmente)
+                display: flex;
+                justify-content: space-between;
+                margin-top: -33px;
+                max-width: 558px;
             }
 
+            // Estilização de cada combo
             &__combo {
+                // Define a largura de cada combo
                 width: calc(50% - 12px);
 
+                // Estilização específica para dispositivos com tela de até 768px de largura
                 @media (max-width: 768px) {
+                    // Ajusta a largura para 100% (ocupar toda a linha) para dispositivos móveis
                     width: 100%;
+                    // Adiciona margem na parte inferior de cada combo
                     margin-bottom: 24px;
+                    padding: 5px;
                 }
 
                 img {
+                    // Limita a altura máxima da imagem de cada combo
                     max-height: 60px;
                 }
             }

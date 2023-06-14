@@ -1,42 +1,56 @@
+// Importa o arquivo parcial 'variaveis' do Sass que contém as variáveis de cor
 @use 'variaveis';
 
+// .shows é a classe CSS primária para a seção do site que apresenta shows
 .shows {
+    // Define o padding e a altura mínima da seção de shows
     padding: 2vw 5.6vw;
-    min-height: 50vw;
-
+    // Este é o CSS para a lista de shows
     &__list {
+        // Adiciona uma margem ao topo e inicialmente esconde a lista de shows
         margin-top: 44px;
         display: none;
+
+        // Define o layout em grid para a lista de shows
         grid-template-columns: 1fr 1fr 1fr;
         gap: 24px;
 
+        // Para telas com largura máxima de 768px, ajusta o layout do grid para 2 colunas
         @media (max-width: 768px) {
             grid-template-columns: 1fr 1fr;
         }
 
+        // Se a lista está ativa, torna-a visível mudando o display para grid
         &--is-active {
             display: grid;
         }
 
+        // Para cada item na lista de shows
         &__item {
             img {
+                // Garante que a imagem não exceda a largura de seu contêiner e adiciona uma borda levemente arredondada
                 max-width: 100%;
                 border-radius: 4px;
             }
         }
     }
 
+    // Este é o CSS para as abas de shows
     &__tabs {
+        // Define o layout flexível para as abas de shows e centraliza o conteúdo
         display: flex;
         justify-content: center;
 
+        // Para telas com largura máxima de 768px, permite a rolagem horizontal e adiciona padding à esquerda
         @media (max-width: 768px) {
             white-space: nowrap;
             overflow-x: scroll;
             padding-left: 20px;
         }
 
+        // Este é o CSS para o botão de abas
         &__button {
+            // Define a cor do texto, tamanho da fonte, borda, padding, background, transformação do texto, margem, cursor e borda inferior
             color: variaveis.$corTextoSecundario;
             font-size: 20px;
             border: none;
@@ -47,10 +61,12 @@
             cursor: pointer;
             border-bottom: 5px solid transparent;
 
+            // Se a aba está ativa, altera a cor da borda
             &--is-active {
                 border-color: variaveis.$corTextoSecundario;
             }
 
+            // Para telas com largura máxima de 768px, ajusta o tamanho da fonte
             @media (max-width: 768px) {
                 font-size: 16px;
             }
