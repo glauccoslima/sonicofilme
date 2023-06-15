@@ -84,7 +84,7 @@
                     padding-bottom: 24px;
                 }
 
-                ul li::marker {
+                ul li::before {
                     content: '. ';
                     font-size: 3em;
                 }
