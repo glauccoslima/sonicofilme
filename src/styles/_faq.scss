@@ -1,3 +1,4 @@
+@use 'variaveis';
 // Estilização para a seção de perguntas frequentes (FAQ)
 .faq {
     // Aplica um padding em todos os lados
@@ -85,8 +86,8 @@
                 }
 
                 ul li::before {
-                    content: '. ';
-                    font-size: 3em;
+                    content: "\2022";
+                    color: variaveis.$corTextoPrincipal;
                 }
 
                 p::first-letter {
